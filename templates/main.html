@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<!-- Required meta tags -->
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+		<!-- Custom/Local -->
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+		<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+
+		<title>SPAK</title>
+	</head>
+	<body>
+		<!-- Mouse Animation -->
+		<div class="curs-circ" style="left: -100px;"></div>
+		<div class="curs-c-outl" style="left: -100px;"></div>
+
+		<!-- Collapseable Sidebar -->
+		<div id="mySidebar" class="sidebar">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+			<a href="{{ url_for('about') }}">About</a>
+
+		</div>
+
+		<div id="main">
+			<button class="openbtn" onclick="openNav()">O</button>
+		</div>
+
+		<!-- Interesting NASA Pictures -->
+
+		<!-- Account ID: 23457b8f-eb6f-404c-b5b6-15f4f6632fb8 -->
+
+		<div class="container-fluid header">
+			<div id="headtext">Hello {{n}}<br>NASA's Image Of The Day</div>
+		</div>
+
+		<div class="container">
+			<div id="l-text">NASA's API</div><br>
+			<p>One of the most popular websites at NASA is the Astronomy Picture of the Day. In fact, this website is one of the most popular websites across all federal agencies. It has the popular appeal of a Justin Bieber video. This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other applications. Such as the one you are seeing above.</p>
+		</div>
+
+		<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+		<!-- Style For NASA's Pic Of The Day -->
+		<style type="text/css">
+			.header {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.8)), url({{i}});
+				filter: grayscale(100);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: relative;
+				z-index: 1;
+				-webkit-transition: filter 0.6s;
+			}
+
+			.header:hover {
+				filter: grayscale(0);
+				-webkit-transition: filter 0.2s;
+			}
+		</style>
+
+		<script>
+			function openNav() {
+				document.getElementById("mySidebar").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+				document.getElementById("main").style.opacity = "0";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidebar").style.width = "0";
+				document.getElementById("main").style.marginLeft= "0";
+				document.getElementById("main").style.opacity = "1";
+			}
+		</script>
+
+		<!-- jQuery | Popper.js | Bootstrap JS -->
+			 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		<!-- Custom/Local -->
+			<script src="{{ url_for('static', filename='js/fun.js') }}"></script>
+	</body>
+</html>

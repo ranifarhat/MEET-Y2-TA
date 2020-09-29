@@ -1,0 +1,255 @@
+html {
+  height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	background: linear-gradient(30deg, #1A1A1A, #003b59);
+	font-family: 'Abel';
+}
+
+
+.hl-cont {
+	width: 100%;
+	height: 100%;
+	/*background-color: red;*/
+}
+
+#headline {
+	color: #DCDCF9;
+	text-shadow: 0px 0px 2px #DCDCF9;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 25%;
+	font-size: 3rem;
+	animation: flash 0.00001s linear infinite;
+}
+
+/* set rain container parameters*/
+.rain {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	pointer-events: auto\none;
+	pointer-events:none;
+}
+
+.rain.back-row {
+	display: none;
+	z-index: 1;
+	bottom: 60px;
+	opacity: 0.5;
+	pointer-events: auto\none;
+	pointer-events:none;
+}
+
+body.back-row-toggle .rain.back-row {
+	display: block;
+}
+
+/* droplets */
+.drop {
+	position: absolute;
+	bottom: 100%;
+	width: 15px;
+	height: 120px;
+	pointer-events: none;
+	animation: drop 0.5s linear infinite;
+	pointer-events: auto\none;
+	pointer-events:none;
+}
+
+@keyframes drop {
+	0% {
+		transform: translateY(0vh); /* speed on the y axis */
+		transform: translateX(10vh);/* speed on the x axis */
+	}
+	75% {
+		transform: translateY(90vh);
+	}
+	100% {
+		transform: translateY(90vh);
+	}
+}
+
+/* gradient overlay */
+.stem {
+	width: 1px;
+	height: 60%;
+	margin-left: 7px;
+	background: linear-gradient(30deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+	animation: stem 0.5s linear infinite;
+	pointer-events: auto\none;
+	pointer-events:none;
+}
+
+@keyframes stem {
+	0% {
+		opacity: 1;
+	}
+	65% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+
+/* text flickering effect */
+@keyframes flash {
+	0% {
+		text-shadow: 0px 0px 5px #DCDCF9;
+		color: #85CAFF;
+	}
+	25% {
+		text-shadow: 0px 3px 5px #DCDCF9;
+	}
+	50% {
+		text-shadow: -3px 6px 5px #DCDCF9;
+		color: #DCDCF9;
+	}
+	75% {
+		text-shadow: -4px 2px 5px #DCDCF9;
+	}
+	100% {
+		text-shadow: 0px 0px 5px #DCDCF9;	
+	}
+}
+
+/* same effect but for borders*/
+@keyframes brder-flash {
+	0% {
+		box-shadow: 0px 0px 5px #DCDCF9;
+		color: #85CAFF;
+	}
+	25% {
+		box-shadow: 0px 2px 5px #DCDCF9;
+	}
+	50% {
+		box-shadow: -2px 8px 5px #DCDCF9;
+		color: #DCDCF9;
+	}
+	75% {
+		box-shadow: -4px 4px 5px #DCDCF9;
+	}
+	100% {
+		box-shadow: 0px 0px 5px #DCDCF9;	
+	}
+}
+
+/* buttons */
+#int-button { 
+	font-size: 3rem;
+	background: none;
+	color: #DCDCF9;
+
+	outline: none;
+	/*border: 2px solid #DCDCF9;*/
+	border: none;
+	border-radius: 0.25em;
+	/*animation: brder-flash 0.00001s linear infinite;*/
+
+	display: flex;
+	vertical-align: middle;
+	margin: 0 auto;
+	margin-top: 25%;
+
+	z-index: 100000;
+	filter: blur(2px);
+
+	-webkit-transition: transform 0.4s, filter 0.4s, background 0.4s;
+}
+
+#int-button:hover {
+	transform: scale(1.2);
+	filter: blur(0);
+	/*background: rgba(35, 35, 6, 0.6);*/
+	-webkit-transition: transform 0.2s, filter 0.2s, background 0.2s;
+
+}
+
+#join-btn {
+	font-size: 1.5rem;
+	background: rgba(20,20,20, 0);
+	color: #DCDCF9;
+
+	outline: none;
+	border: 1px solid #DCDCF9;
+	/*border: none;*/
+	border-radius: 0.25em;
+	/*animation: brder-flash 0.00001s linear infinite;*/
+
+	padding: 0.25em;
+	display: flex;
+	vertical-align: middle;
+	margin: 0 auto;
+	box-shadow: 0px 0px 10px #DCDCF9;
+
+	z-index: 100000;
+
+	-webkit-transition: transform 0.4s, filter 0.4s, background 0.4s;
+}
+
+#join-btn:hover {
+	transform: scale(1.2);
+	filter: blur(0);
+	/*background: rgba(35, 35, 6, 0.6);*/
+	-webkit-transition: transform 0.2s, filter 0.2s, background 0.2s;
+}
+
+#join-un {
+	font-size: 1.25rem;
+	width: 14em;
+	background: rgba(20,20,20, 0);
+	color: #DCDCF9;
+
+	outline: none;
+	border: 1px solid #DCDCF9;
+	border-radius: 0.25em;
+
+	padding: 0.25em;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 auto;
+	box-shadow: 0px 0px 2px #DCDCF9;
+
+	z-index: 100000;
+
+	-webkit-transition: transform 0.4s, filter 0.4s, background 0.4s;
+}
+
+#text-flicker {
+	animation: flash 0.00001s linear infinite;
+}
+
+a {
+	text-decoration: none;
+}
+
+.form-log {
+	text-align: center;
+	margin: 1em;
+}
+
+.abt {
+	color: #DCDCF9;
+	text-align: center;
+	margin-top: 1em;
+}
+
+#headabt {
+	font-size: 5em;
+}
+
+#smolabt{
+	font-size: 3em;
+
+}
